@@ -1,4 +1,4 @@
-#include <ftxui/screen/screen.hpp>
+#include <ftxui/dom/elements.hpp>
 #include <string>
 #include <fstream>
 
@@ -7,11 +7,11 @@ using namespace ftxui;
 
 class Dibujo
 {
-    private:
+private:
     ifstream archivo;
     Element contenido;
 
-    public:
+public:
     Dibujo(string path)
     {
         archivo.open(path);
@@ -34,8 +34,9 @@ class Dibujo
         Element bloque = vbox(objetos);
         archivo.close();
     }
-    Element GetElement(){
-        return this -> contenido;
+    Element GetElement()
+    {
+        return this->contenido;
     }
-~Dibujo() { }
+    ~Dibujo()
 }

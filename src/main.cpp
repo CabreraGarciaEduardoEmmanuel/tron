@@ -11,21 +11,28 @@ using namespace ftxui;
 
 int main(int argc, char const *argv[])
 {
-   Dibujo moto("./assts/images/moto.txt");
+   Dibujo moto("./assets/images/moto.txt");
    Dibujo bloque("./assets/images/bloque.txt");
+///
 
+
+
+
+
+
+
+///
     int fotograma = 0;
     while (true)
     {
-
         this_thread::sleep_for(0.1s);
         fotograma++;
         Element personaje = spinner (21,fotograma) | bold | color(Color::Red) | bgcolor(Color::White);
-        Element eMoto = moto;
-        Element eBloque = bloque;
-        Element dibujo = hbox({personaje , moto.GetElement(), bloque,GetElement()});
+        ///Element eMoto = moto;
+        ///Element eBloque = bloque;
+        Element dibujo = hbox({personaje, moto.GetElement(), bloque.GetElement()});
         Screen pantalla = Screen::Create(Dimension::Full());
-        Render(pantalla,dibujo);
+        Render(pantalla, dibujo);
         pantalla.Print();  
         cout<<pantalla.ResetPosition();
     }
